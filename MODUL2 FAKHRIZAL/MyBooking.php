@@ -23,14 +23,14 @@
 
 <body>
   <?php
-  $name = $_POST['name'];
+  $name = $_POST['nama'];
   $checkin = $_POST['checkin'];
   $duration = $_POST['duration'];
   $number = $_POST['number'];
   $roomtype = $_POST['roomtype'];
   $checkout = date("d/m/Y", strtotime($checkin . "+" . $_POST["duration"] . "days"));
 
-  if (isset($_POST['service'])) {
+  if (!isset($_POST['service'])) {
     $service = $_POST['service'];
   } else {
     $service = [];
@@ -70,8 +70,8 @@ $serviceadd = 20* sizeof($service);
             <td><?= $checkout ?></td>
             <td><?= $roomtype ?></td>
             <td><?= $number ?></td>
-            <td><?php if (isset($_POST["roomservice"])) echo $_POST["roomservice"] . "<br>";
-                if (isset($_POST["breakfast"])) echo $_POST["breakfast"] . "<br>"; ?></td>
+            <td><?php if (!isset($_POST["roomservice"])) echo $_POST["roomservice"] . "<br>";
+                if (!isset($_POST["breakfast"])) echo $_POST["breakfast"] . "<br>"; ?></td>
             <td style="text-align: center;">$ <?= $total ?></th>
           </tr>
         </tbody>
