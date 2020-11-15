@@ -28,7 +28,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <from action="MyBooking.php" method="get">
+        <form action="MyBooking.php" method="post">
           <div class="form group">
             <div class="col-md-6 mb-3 ">
               <label for="name">Name</label>

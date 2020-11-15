@@ -15,7 +15,7 @@
         <a class="nav-link text-dark" href="Home.php">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-dark" href="Booking.php">Booking <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-dark" href="Booking.php">Booking<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
@@ -23,7 +23,7 @@
 
 <body>
   <?php
-  $name = $_POST['nama'];
+  $name = $_POST['name'];
   $checkin = $_POST['checkin'];
   $duration = $_POST['duration'];
   $number = $_POST['number'];
