@@ -27,4 +27,15 @@ if (isset($_POST["daftar"])) {
     } else {
         echo "<script>alert('Coba Lagi!');</script>";
     }
+
+    //Memulai Session
+    header("Refresh:10;url=login.php");
+
+    session_start();
+    $_SESSION["regisnama"] = $nama;
+    $_SESSION["regisemail"] = $email;
+    $_SESSION["regisno_hp"] = $no_hp;
+    $_SESSION["regissandi"] = $sandi;
+    $_SESSION["regisTime"] = time();
+    echo "'$nama' Berhasil Register. akan diarahkan ke login";
 }

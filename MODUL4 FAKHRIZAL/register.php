@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <?php
-      include('config.php');
-    ?>
+session_start();
+include('config.php');
+?>
+
 <head>
     <title>Register</title>
     <!-- Required meta tags -->
@@ -27,6 +29,19 @@
             </li>
         </ul>
     </nav>
+    <?php
+    if (isset($_SESSION['regisTime'])) {
+        $elapsedTime = floor((time() - $_SESSION['regisTime']) / (60));
+        $lblElapsedTime = $elapsedTime < 1 ? "kurang dari 1 menit" : $elapsedTime . " menit yang lalu";
+
+        echo "<h3>Sudah Mendaftar,</h3>";
+        echo "<p>Kamu sudah mendaftar dengan Nama <u>" . $_SESSION['regisnama'] . "</u> dalam $lblElapsedTime</P>";
+        echo '<p><a href="regisdst.php">Klik untuk membatalkan pendaftaran</a></p>';
+        echo '<a class="button button-outline"href=login.php">Login</a>';
+        die;
+    }
+
+    ?>
     <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; border-radius: 5px; width: 30.5em; margin:0 auto; margin-top:25px; margin-bottom:20px;">
         <div class="card-body">
             <h2 class="card-title" style="text-align: center;">Registrasi</h2>
